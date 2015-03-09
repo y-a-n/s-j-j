@@ -1,0 +1,40 @@
+@charset "Shift_JIS";
+
+/* --- タイプ2 レイアウト --- */
+
+
+/* --- 全体の背景・テキスト --- */
+body {
+min-width: 880px; /* 全体の最小幅 */
+margin: 0;
+padding: 0;
+background-color: #ffffff; /* 全体の背景色 */
+color: #000000; /* 全体の文字色 */
+font-size: 80%; /* 全体の文字サイズ */
+}
+
+/* --- 全体のリンクテキスト --- */
+a:link { color: #0000ff; }
+a:visited { color: #000090; }
+a:hover { color: #ff8000; }
+a:active { color: #ff0000; }
+
+/* --- コンテナ --- */
+#header div.container,
+#content div.container,
+#footer div.container {
+width: 880px; /* コンテナの幅 */
+margin: 0 auto; /* センタリング */
+}
+
+/* --- ヘッダ --- */
+#header{
+margin-bottom: 20px; /* ヘッダの下マージン */
+padding: 10px 0; /* ヘッダのパディング（上下、左右） */
+background-color: #f9f9f9; /* ヘッダの背景色 */
+border-top: 10px #c0c0c0 solid; /* ヘッダの上境界線 */
+border-bottom: 1px #c0c0c0 solid; /* ヘッダの下境界線 */
+}
+#header div.container {
+position: relative; /* 相対配置（ガイドメニューのために設定） */
+}
