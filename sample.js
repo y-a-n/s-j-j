@@ -1,25 +1,35 @@
+var hankei = 0;
+var a = 0;
 function setup(){
-
-	pbCtx.beginPath();	//描画を開始する
-	pbCtx.rect(135, 100, 200, 200);		//左、上、幅、高さで矩形を描く
-	pbCtx.stroke();		//線を描く
-
+	pbCtx.clearRect(0,0,screenWidth,screenHeight);
 	pbCtx.beginPath();
-	pbCtx.rect(435, 100, 200, 200);
-	pbCtx.fill();		//塗りつぶす
-
-	pbCtx.beginPath();
-	//中心座標、半径、開始角度、終角度、反時計回りで円を描く
-	pbCtx.arc(235, 500, 100, 0, Math.PI*1.5, true);
+	pbCtx.moveTo(screenWidth/2,screenHeight/2);
+	for(var a = 0;a < 360 * 5;a++){
+		pbCtx.lineTo(	screenWidth/2+hankei*Math.cos(a/180*Math.PI),
+						screenHeight/2-hankei*Math.sin(a/180*Math.PI));
+		hankei = hankei + 70/360;
+	}
 	pbCtx.stroke();
-
+	
 	pbCtx.beginPath();
-	pbCtx.arc(535, 500, 100, 0, Math.PI*2, true);
-	pbCtx.fill();
+	pbCtx.moveTo(screenWidth/2,screenHeight/2);
+	pbCtx.lineTo(screenWidth/2+140,screenHeight/2);
+	pbCtx.stroke();
 }
 
 function loop(){
+//	pbCtx.clearRect(0,0,screenWidth,screenHeight);
+//	pbCtx.beginPath();
+//	pbCtx.moveTo(screenWidth/2,screenHeight/2);
+//	for(var a = 0;a < 360 * 5;a++){
+//		pbCtx.lineTo(	screenWidth/2+hankei*Math.cos(a/180*Math.PI),
+//						screenHeight/2-hankei*Math.sin(a/180*Math.PI));
+//		hankei = hankei + 50/360;
+//	}
 	
+//	pbCtx.stroke();
+//	a = a+1
+		
 }
 
 function onPressed(n){
